@@ -12,8 +12,8 @@ do
 	
 	cd /vmfs/volumes/$DATASTORE/${ORIGINAL_NAMES[$i]}
 	
-	# vmkfstools -i "${ORIGINAL_NAMES[$i]}.vmdk" "${NEW_NAMES[$i]}.vmdk"
-	vmkfstools -E "${ORIGINAL_NAMES[$i]}.vmdk" "${NEW_NAMES[$i]}.vmdk"
+	# vmkfstools -i ${ORIGINAL_NAMES[$i]}.vmdk ${NEW_NAMES[$i]}.vmdk
+	vmkfstools -E ${ORIGINAL_NAMES[$i]}.vmdk "${NEW_NAMES[$i]}.vmdk
 	
 	sed -i 's/${ORIGINAL_NAMES[$i]}/${NEW_NAMES[$i]}/g' ${ORIGINAL_NAMES[$i]}.vmx
 	
