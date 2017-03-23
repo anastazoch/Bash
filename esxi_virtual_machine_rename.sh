@@ -19,10 +19,8 @@ do
 	
 	for file in *.vmx *.nvram 
 	do	
-		filename=$(basename $file)
-		extension=${filename##*.}
-		filename="${filename%.*}"
-		mv $filename.$extension ${NEW_NAMES[$i]}.$extension
+		extension=${file##*.}
+		mv $file ${NEW_NAMES[$i]}.$extension
 	done
 	
 	cd ..
@@ -34,6 +32,6 @@ do
 	:'
 	The following commands have to be executed for each virtual machine in order to answer that you have either copied or moved the virtual machine, otherwise the virtual machine will hang up indefinitely and not complete the boot process:
 	'
-	MESSAGE_ID=`vim-cmd vmsvc/message $VMID | grep "Virtual machine message" | awk -F ' ' {'print $4'}` # Gather the message ID from the "Virtual machine message <message_ID>:" line of the output.
+	MESSAGE_ID=`vim-cmd vmsvc/message $VMID | grep "Virtual machine message" | awk -F ' ' '{print $4}'` # Gather the message ID from the "Virtual machine message <message_ID>:" line of the output.
 	vim-cmd vmsvc/message $VMID $MESSAGE_ID <option_number>	# Option number can be 0 = Cancel, 1 = "I moved it", or 2 = "I copied it">
 done
