@@ -1,4 +1,4 @@
-import re, sys, urllib2, json	
+import os, re, sys, urllib2, json	
 
 def get_user_input(format=None, ip_addresses=None):
 	if not format:
