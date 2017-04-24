@@ -79,9 +79,8 @@ def insert_geoinfo(ipaddresses, format):
 
 def parse_ip_addresses(input_file):
 	ip_addresses = []
-	with open('input_file', 'r') as f:
-		for line in f.read():
-			ip_addresses.append(line.spplit(',')[0])
+	with open(input_file, 'r') as inf:
+		ip_addresses = [ line.split()[0] for line in inf ]
 	return ip_addresses
 				
 if __name__ == '__main__':
@@ -95,7 +94,7 @@ if __name__ == '__main__':
 	if len(sys.argv) < 3:
 		sys.exit("No IP addresses inserted.")
 		ip_addresses = get_user_info(format)
-	if len(sys.argv) == 3 and os.exists(sys.argv[2]):
+	if len(sys.argv) == 3 and os.path.exists(sys.argv[2]):
 		ip_addresses = parse_ip_addresses(sys.argv[2])
 	else:
 		ip_addresses = sys.argv[2:]
