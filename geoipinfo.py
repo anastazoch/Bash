@@ -78,10 +78,8 @@ def insert_geoinfo(ipaddresses, format):
 			geoinfo_json = json.loads(geoinfo)
 
 def parse_ip_addresses(input_file):
-	ip_addresses = []
 	with open(input_file, 'r') as inf:
-		ip_addresses = [ line.split()[0] for line in inf ]
-	return ip_addresses
+		return list(set([ line.split()[0] for line in inf ]))
 				
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
