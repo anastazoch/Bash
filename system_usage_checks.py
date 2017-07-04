@@ -51,8 +51,8 @@ def check_disk():
 
 
 def send_email_notification(subject, body):
-    fromaddr = 'anastas_zoch@yahoo.gr'
-    toaddrs = ['anastas_zoch@yahoo.gr', 'geogour@gmail.com']
+    fromaddr = <fromaddr>
+    toaddrs = [<toaddrs_list>]
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     msg['To'] = ','.join(toaddrs)
@@ -60,7 +60,7 @@ def send_email_notification(subject, body):
     msg.attach(MIMEText(body, 'plain', 'utf-8'))
 
     try:
-        server = smtplib.SMTP('smtp.mail.yahoo.com', 587)
+        server = smtplib.SMTP(<smtp_server, 587)
         server.starttls()
         server.login(fromaddr, passwd)
         for toaddr in toaddrs:
