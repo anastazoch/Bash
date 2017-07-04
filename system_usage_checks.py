@@ -71,7 +71,6 @@ def send_email_notification(subject, body):
         server.quit()
 
 
-
 if __name__ == '__main__':
     check_cpu()
     check_memory()
