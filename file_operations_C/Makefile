@@ -2,7 +2,7 @@ CC=gcc
 
 .PHONY: clean
 
-write_file_to_file:
+file_operations:
 	${CC} -o file_operations main.c file_functions.c
 
 clean: 
