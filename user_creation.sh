@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERS=(<space-separated_user_names>)
-GROUPS=(<space-separated_group_name>)
+GROUPS=(<space-separated_group_names>)
 DEFAULT_PASSWORD=<default_password>
 
 for user in ${USERS[@]}; do
