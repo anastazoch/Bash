@@ -6,12 +6,12 @@
  
 int main(int argc, char **argv) {
     
-    const char *commands[] = {"cp", "mv", "rm", "chmod", "chown"};
-    char command[5];
+	const char *commands[] = {"cp", "mv", "rm", "chmod", "chown"};
+	char command[5];
 	size_t num_of_commands = 0;
 	bool command_found = false;
-    char mode[4];
-    int mode_int;
+	char mode[4];
+	int mode_int;
 	char file[50], src_file[50], dst_file[50];
 	int i;
 	
