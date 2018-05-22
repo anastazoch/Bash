@@ -20,7 +20,7 @@ then
     DIRS_TO_BACKUP=("$@")
 fi
 
-# If the array contains no directories and no directory names have been passed as arguments from the command line.
+# If the array contains no directories or no directory names have been passed as arguments to the command line.
 if (( ( ${#DIRS_TO_BACKUP[@]} < 1 && $# < 1 ) || ( ${#DIRS_TO_BACKUP[@]} > 0 && $# > 0 ) ))
 then
 	echo "Error: Wrong number of directories." 2>&1
