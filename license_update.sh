@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAIL_ADDRESS=...
-HOSTNAME=`hostname | awk '{print toupper($0)}'`
+HOSTNAME=`hostname | tr [a-z] [A-Z]`
 UPDATE_DATE=`sudo vzlicview | grep update | awk -F = '{print $2}' | awk -F '"' '{print $2}' | awk -F ' ' '{print $1}'`
 EXPIRATION_DATE=`sudo vzlicview | grep expiration | awk -F '=' '{print $2}' | awk -F '"' '{print $2}' | awk -F ' ' '{print $1}'`
 DAYS_LEFT=`echo $(( ($(date --date=$EXPIRATION_DATE +%s) - $(date +%s))/(24*60*60) ))`
